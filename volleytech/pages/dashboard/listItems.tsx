@@ -14,46 +14,54 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 
-export const mainListItems = (
-  <React.Fragment>
-    <ListItemButton>
-      <ListItemIcon>
-        <DonutLargeIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <MonetizationOnIcon />
-      </ListItemIcon>
-      <ListItemText primary="Services" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <CalendarTodayIcon />
-      </ListItemIcon>
-      <ListItemText primary="Court Schedule" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <FamilyRestroomIcon />
-      </ListItemIcon>
-      <ListItemText primary="Customers" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <PeopleAltIcon />
-      </ListItemIcon>
-      <ListItemText primary="Staff" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssessmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Reports" />
-    </ListItemButton>
-  </React.Fragment>
-);
+interface MainListProps {
+  currentLink: string;
+  setCurrentLink: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const MainListItems = ({ currentLink, setCurrentLink }: MainListProps) => {
+
+  return (
+    <React.Fragment>
+      <ListItemButton autoFocus selected={currentLink === 'dashboard' ? true: false} onClick={() => setCurrentLink('dashboard')}>
+        <ListItemIcon>
+          <DonutLargeIcon />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
+      </ListItemButton>
+      <ListItemButton selected={currentLink === 'services' ? true: false} onClick={() => setCurrentLink('services')}>
+        <ListItemIcon>
+          <MonetizationOnIcon />
+        </ListItemIcon>
+        <ListItemText primary="Services" />
+      </ListItemButton>
+      <ListItemButton>
+        <ListItemIcon>
+          <CalendarTodayIcon />
+        </ListItemIcon>
+        <ListItemText primary="Court Schedule" />
+      </ListItemButton>
+      <ListItemButton>
+        <ListItemIcon>
+          <FamilyRestroomIcon />
+        </ListItemIcon>
+        <ListItemText primary="Customers" />
+      </ListItemButton>
+      <ListItemButton>
+        <ListItemIcon>
+          <PeopleAltIcon />
+        </ListItemIcon>
+        <ListItemText primary="Staff" />
+      </ListItemButton>
+      <ListItemButton>
+        <ListItemIcon>
+          <AssessmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="Reports" />
+      </ListItemButton>
+    </React.Fragment>
+  )
+};
 
 export const secondaryListItems = (
   <React.Fragment>

@@ -19,9 +19,10 @@ import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import Card from './Card';
 import CourtSchedule from './CourtSchedule';
-import { mainListItems, secondaryListItems } from './listItems';
+import { MainListItems, secondaryListItems } from './listItems';
 import Transactions from './Transactions';
 import DashboardSelected from './DashboardSelected'
+import Services from '../services/Services';
 
 function Copyright(props: any) {
   return (
@@ -99,6 +100,7 @@ const mdTheme = createTheme({
 
 function DashboardContent() {
   const {user} = useAuth();
+  const [currentLink, setCurrentLink] = React.useState('dashboard');
   //baseUrl should be your FRONTEGG_APP_URL from .env.local
   const baseUrl = 'http://localhost:3000'
   
@@ -166,7 +168,7 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            <MainListItems currentLink={currentLink} setCurrentLink={setCurrentLink} />
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
           </List>
@@ -185,7 +187,8 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <DashboardSelected />
+            {currentLink === 'dashboard' && <DashboardSelected />}
+            {currentLink === 'services' && <Services />}
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
