@@ -6,45 +6,49 @@ import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import DonutLargeIcon from '@mui/icons-material/DonutLarge';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import SettingsIcon from '@mui/icons-material/Settings';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 
 export const mainListItems = (
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-        <DashboardIcon />
+        <DonutLargeIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <MonetizationOnIcon />
       </ListItemIcon>
       <ListItemText primary="Services" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <PeopleIcon />
+        <CalendarTodayIcon />
       </ListItemIcon>
       <ListItemText primary="Court Schedule" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <BarChartIcon />
+        <FamilyRestroomIcon />
       </ListItemIcon>
       <ListItemText primary="Customers" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <LayersIcon />
+        <PeopleAltIcon />
       </ListItemIcon>
       <ListItemText primary="Staff" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <LayersIcon />
+        <AssessmentIcon />
       </ListItemIcon>
       <ListItemText primary="Reports" />
     </ListItemButton>
@@ -55,7 +59,7 @@ export const secondaryListItems = (
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-        <AssignmentIcon />
+        <SettingsIcon />
       </ListItemIcon>
       <ListItemText primary="Settings" />
     </ListItemButton>
