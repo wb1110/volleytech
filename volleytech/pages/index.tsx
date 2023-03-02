@@ -1,10 +1,12 @@
 import { GetServerSideProps } from 'next';
+import Image from 'next/image';
 import { withSSRSession, useAuth } from '@frontegg/nextjs';
 
 export default function MyPage({ products }) {
   const {user} = useAuth();
   //baseUrl should be your FRONTEGG_APP_URL from .env.local
-  const baseUrl =  'http://localhost:3000/'
+  const baseUrl = 'http://localhost:3000'
+  
 
   const logout = () => {
     window.location.href = `${baseUrl}/account/logout`;
@@ -15,7 +17,8 @@ export default function MyPage({ products }) {
       <h1>My Page</h1>
       {/* {products} */}
       <div>
-        <img src={user?.profilePictureUrl} alt={user?.name}/>
+        {/* <Image src={user?.profilePictureUrl} alt={user?.name} /> */}
+        <p>{user?.name}</p>
       </div>
       <div>
         <span>Logged in as: {user?.name}</span>

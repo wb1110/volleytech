@@ -9,6 +9,6 @@ export default withFronteggApp(CustomApp,
   {
     hostedLoginBox: true, 
     authOptions: {
-    // keepSessionAlive: true // Uncomment this in order to maintain the session alive
+    keepSessionAlive: true // Uncomment this in order to maintain the session alive
     }
 });
