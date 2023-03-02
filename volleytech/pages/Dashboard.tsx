@@ -119,8 +119,7 @@ function DashboardContent() {
         <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
-              pr: '24px',
-              backgroundColor: 'transparent' // keep right padding when drawer closed
+              pr: '24px' // keep right padding when drawer closed
             }}
           >
             <IconButton
@@ -146,11 +145,8 @@ function DashboardContent() {
             </Typography>
             <div style={{ width: '20%', justifyContent: 'space-between', display: 'flex', alignItems: 'center'}}>
               <span>{user?.name}</span>
-              <Button onClick={logout} variant='contained'>Log out</Button>
+              <Button onClick={logout} variant='contained' color='secondary'>Log out</Button>
               <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
             </IconButton>
             </div>
             
