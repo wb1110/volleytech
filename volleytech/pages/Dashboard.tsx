@@ -87,7 +87,16 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const mdTheme = createTheme();
+const mdTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#363740',
+    },
+    secondary: {
+      main: '#FFFFFF',
+    },
+  },
+});
 
 function DashboardContent() {
   const {user} = useAuth();
