@@ -103,6 +103,15 @@ function DashboardContent() {
   const [currentLink, setCurrentLink] = React.useState('dashboard');
   //baseUrl should be your FRONTEGG_APP_URL from .env.local
   const baseUrl = 'http://localhost:3000'
+
+  const dynamicTitle = (name: string) => {
+    if (name === 'dashboard') {
+      return 'Dashboard'
+    }
+    if (name === 'services') {
+      return 'Services'
+    }
+  }
   
 
   const logout = () => {
@@ -142,7 +151,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              {dynamicTitle(currentLink)}
             </Typography>
             <div style={{ width: '20%', justifyContent: 'space-between', display: 'flex', alignItems: 'center'}}>
               <span>{user?.name}</span>
