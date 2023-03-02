@@ -21,6 +21,8 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
+import { withSSRSession, useAuth } from '@frontegg/nextjs';
+import { Button } from '@mui/material';
 
 function Copyright(props: any) {
   return (
@@ -88,6 +90,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const mdTheme = createTheme();
 
 function DashboardContent() {
+  const {user} = useAuth();
+  //baseUrl should be your FRONTEGG_APP_URL from .env.local
+  const baseUrl = 'http://localhost:3000'
+  
+
+  const logout = () => {
+    window.location.href = `${baseUrl}/account/logout`;
+  };
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -125,11 +135,16 @@ function DashboardContent() {
             >
               Dashboard
             </Typography>
-            <IconButton color="inherit">
+            <div style={{ width: '20%', justifyContent: 'space-between', display: 'flex', alignItems: 'center'}}>
+              <span>{user?.name}</span>
+              <Button onClick={logout} variant='contained'>Log out</Button>
+              <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            </div>
+            
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
