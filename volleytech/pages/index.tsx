@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { withSSRSession, useAuth } from '@frontegg/nextjs';
+import Dashboard from './Dashboard';
 
 export default function MyPage({ products }) {
   const {user} = useAuth();
@@ -14,6 +15,7 @@ export default function MyPage({ products }) {
 
   return (
     <div>
+      <Dashboard />
       <h1>My Page</h1>
       {/* {products} */}
       <div>
