@@ -18,6 +18,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import Card from './Card';
+import CourtSchedule from './CourtSchedule';
 import { mainListItems, secondaryListItems } from './listItems';
 import Transactions from './Transactions';
 
@@ -240,6 +241,11 @@ function DashboardContent() {
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <Transactions />
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <CourtSchedule />
                 </Paper>
               </Grid>
             </Grid>
