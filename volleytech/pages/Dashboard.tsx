@@ -19,10 +19,11 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
-import Deposits from './Deposits';
+import Deposits from './Card';
 import Orders from './Orders';
 import { withSSRSession, useAuth } from '@frontegg/nextjs';
 import { Button } from '@mui/material';
+import Card from './Card';
 
 function Copyright(props: any) {
   return (
@@ -187,30 +188,56 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
+              {/* Overdue Payments */}
+              <Grid item xs={12} md={6} lg={3}>
                 <Paper
                   sx={{
                     p: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 240,
+                    alignItems: 'center',
                   }}
                 >
-                  <Chart />
+                  <Card title='Overdue Payments' value='6'/>
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
+              {/* Revenue */}
+              <Grid item xs={12} md={6} lg={3}>
                 <Paper
                   sx={{
                     p: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 240,
+                    alignItems: 'center',
                   }}
                 >
-                  <Deposits />
+                  <Card title='Revenue' value={`$105,000`} />
+                </Paper>
+              </Grid>
+              {/* Payroll */}
+              <Grid item xs={12} md={6} lg={3}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Card title='Payroll' value={`$51,500`} />
+                </Paper>
+              </Grid>
+              {/* Expenses */}
+              <Grid item xs={12} md={6} lg={3}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Card title='Payroll' value={`$10,200`} />
                 </Paper>
               </Grid>
               {/* Recent Orders */}

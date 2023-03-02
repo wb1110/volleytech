@@ -7,21 +7,18 @@ function preventDefault(event: React.MouseEvent) {
   event.preventDefault();
 }
 
-export default function Deposits() {
+interface CardProps {
+  title: string;
+  value: string;
+}
+
+export default function Card({ title, value }: CardProps) {
   return (
     <React.Fragment>
-      <Title>Recent Deposits</Title>
+      <Title>{title}</Title>
       <Typography component="p" variant="h4">
-        $3,024.00
+        {value}
       </Typography>
-      <Typography color="text.secondary" sx={{ flex: 1 }}>
-        on 15 March, 2019
-      </Typography>
-      <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          View balance
-        </Link>
-      </div>
     </React.Fragment>
   );
 }
