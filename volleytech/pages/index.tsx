@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import { withSSRSession, useAuth } from '@frontegg/nextjs';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard/Dashboard';
 
 export default function MyPage() {
 
