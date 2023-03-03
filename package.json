@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clear": "lsof -i tcp:3000"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
